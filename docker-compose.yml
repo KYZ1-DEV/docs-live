@@ -28,6 +28,7 @@ services:
     container_name: laravel_node
     volumes:
       - ./laravel_app:/var/www/html
+      working_dir: /var/www/html
     command: ["npm", "run", "dev"]
     networks:
       - laravel
