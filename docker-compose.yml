@@ -1,10 +1,9 @@
-version: '3.9'
 services:
   app:
     user: "${UID}:${GID}"
     build:
       context: .
-      dockerfile: docker/php/Dockerfile
+      dockerfile: docker/Dockerfile
     container_name: laravel_app
     volumes:
       - ./laravel_app:/var/www/html
