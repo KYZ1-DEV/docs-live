@@ -15,6 +15,7 @@ else
 fi
 
 # PHP dependencies
+composer validate --strict
 composer install --optimize-autoloader --no-dev
 
 # Node dependencies & build
