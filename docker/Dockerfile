@@ -10,8 +10,11 @@ RUN apt-get update && apt-get install -y \
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
+# Aktifkan mod_rewrite untuk Laravel
+RUN a2enmod rewrite
+
 # Copy entrypoint
-COPY ../init.sh /usr/local/bin/init.sh
+COPY docker/init.sh /usr/local/bin/init.sh
 RUN chmod +x /usr/local/bin/init.sh
 
 ENTRYPOINT ["/usr/local/bin/init.sh"]
