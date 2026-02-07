@@ -1,0 +1,11 @@
+FROM node:20-alpine
+
+WORKDIR /var/www/html
+
+COPY ./laravel_app/package*.json ./
+
+# Install Node dependencies
+RUN npm install
+
+# Build assets (Tailwind + Vite)
+CMD ["npm", "run", "dev"]
